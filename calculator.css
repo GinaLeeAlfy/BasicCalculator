@@ -11,9 +11,14 @@
 .display{
     color: white;
     grid-area: display;
+    text-align: end;
 }
 
 .buttons{
+
+}
+
+.number{
 
 }
 
@@ -37,14 +42,66 @@
     grid-area: eight;
 }
 
+.nine{
+    grid-area: nine;
+}
+
+.multiplication{
+    grid-area: multiplication;
+}
+
+.four{
+    grid-area: four;
+}
+
+.five{
+    grid-area: five;
+}
+
+.six{
+    grid-area: six;
+}
+
+.subtraction {
+    grid-area: subtraction;
+}
+
+.one{
+    grid-area: one;
+}
+
+.two{
+    grid-area: two;
+}
+
+.three{
+    grid-area: three;
+}
+
+.addition{
+    grid-area: addition;
+}
+
+.cero{
+    grid-area: cero;
+}
+
+.equals{
+    grid-area: equals;
+}
+
+
+
+
+
 
 .container{
     display: grid;
     grid-template-areas: 
-    display display display   display
-    clear   clear   backspace division
-    seven   eight   nine      multiplication
-    four    five    six       subtraction
-    one     two     three     addition
-    cero    cero    cero      equals;
+    "display display display   display"
+    "clear   clear   backspace division"
+    "seven   eight   nine      multiplication"
+    "four    five    six       subtraction"
+    "one     two     three     addition"
+    "cero    cero    cero      equals";
 }
