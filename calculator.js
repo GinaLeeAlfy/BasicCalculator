@@ -28,7 +28,7 @@ document
                     display.innerText = input;
                 }
                 console.log(input);
-             //check if button was clear
+            // check if button was 0
              } else if (event.target.innerText === '0') {
                 if(input === 0){
                     input = 0;
@@ -37,6 +37,7 @@ document
                     input = input + event.target.innerText;
                     display.innerText = input;
                 }
+               //check if button was clear              
              } else if (event.target.innerText === 'C') {
                  clear();
              //check if button was equals
@@ -53,6 +54,9 @@ document
     
     function clear() {
         input = 0;
+        display.innerText = 0;
+        operator = null;
+        memory = null;
     }
 
     function
