@@ -1,6 +1,6 @@
 let input = 0;
 let memory;
-let operator;
+let operator = null;
 const display = document.querySelector(".display");
 
 
@@ -13,11 +13,32 @@ document
         if (click = button) {
              //check if button was an operation
              if (event.target.innerText === '/' || 'x' || '-' || '+') {
-                 if (input != 0){
-                     typeChange();
-                     display.innerText = 0;
-                 } else 
-
+                if (operator === null) {
+                    if (input != 0){
+                        typeChange();
+                        memory();
+                        operator = event.target.innerText;
+                    } else {
+   
+                    }   
+                } else if (operator === '/') {
+                    typeChange();
+                    divide();
+                    operator - event.target.innerText;
+                } else if (operator === 'x') {
+                    typeChange();
+                    multiply();
+                    operator - event.target.innerText;
+                } else if (operator === '-') {
+                    typeChange();
+                    subtract();
+                    operator - event.target.innerText;
+                } else if (operator === '+') {
+                    typeChange();
+                    add();
+                    operator - event.target.innerText;
+                }
+               
              // check if button was a number
              } else if (event.target.innerText === '1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9' ) {
                 if(input === 0){
@@ -62,16 +83,36 @@ document
         memory = null;
     }
 
-    function
-
     function typeChange() {
-        memory = input;
-        memory = parseInt(memory);
-        input = 0;
-        return memory;
+        input = parseInt(input);
+        display.innerText = 0;
+        // memory = input;
+        // memory = parseInt(memory);
+        // input = 0;
+        // display.innerText = 0;
+        // return memory;
     }
 
     function evaluate() {
         
     }
 
+    function memory() {
+        memory = input;
+    }
+
+    function divide() {
+        memory = memory/input;
+    }
+
+    function add() {
+        memory = memory+input;
+    }
+
+    function multiply() {
+        memory = memory*input;
+    }
+
+    function subtract() {
+        memory = memory-input;
+    }
