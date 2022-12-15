@@ -10,17 +10,19 @@ document
         // if(button.tagname === 'BUTTON'){
         // }
         //check if click is button
-        if (click = button) {
+             if (click = button) {
              //check if button was an operation
              if (event.target.innerText === '/' || 'x' || '-' || '+') {
+                //check for previous operator
                 if (operator === null) {
                     if (input != 0){
                         typeChange();
-                        memory();
+                        makeMemory();
                         operator = event.target.innerText;
                     } else {
    
-                    }   
+                    }
+                //if previous operator calculate and reassign operator
                 } else if (operator === '/') {
                     typeChange();
                     divide();
@@ -73,8 +75,8 @@ document
         
          }   else {
             console.log('not a button');
-         }
-    });     
+            }
+        });     
     
     function clear() {
         input = 0;
@@ -97,22 +99,30 @@ document
         
     }
 
-    function memory() {
+    function makeMemory() {
         memory = input;
     }
 
     function divide() {
         memory = memory/input;
+        input = 0;
+        display.innerText = 0;
     }
 
     function add() {
         memory = memory+input;
+        input = 0;
+        display.innerText = 0;
     }
 
     function multiply() {
         memory = memory*input;
+        input = 0;
+        display.innerText = 0;
     }
 
     function subtract() {
         memory = memory-input;
+        input = 0;
+        display.innerText = 0;
     }
