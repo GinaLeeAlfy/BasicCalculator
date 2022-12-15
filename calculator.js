@@ -45,11 +45,14 @@ document
              //check if button was backspace
              } else if (event.target.innerText === '<-'){
              //length of input substring and delete last character
+             } else {
+                console.log('problem');
              }
-
                 alert(`You clicked on button ${event.target.innerText}`);
         
-         }   
+         }   else {
+            console.log('not a button');
+         }
     });     
     
     function clear() {
