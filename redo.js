@@ -2,52 +2,45 @@ let input = 0;
 let memory;
 let operator = null;
 const display = document.querySelector(".display");
+const number = document.querySelector(".number");
+const button = document.querySelector("button");
 
 
 document
     .querySelector(".button-container")
     .addEventListener("click", function(event) {
-        // if(button.tagname === 'BUTTON'){
-        // }
-        //check if click is button
-       if (event.target.tagName === 'BUTTON') {
-             //check if button was an operation
-             if (event.target.classList.contains('operator')) {
+         //    if (event.target.innerText === '/' || 'x' || '-' || '+') {
                 //check for previous operator
-                if (operator === null) {
-                    if (input != 0){
-                        typeChange();
-                        makeMemory();
-                        input = 0;
-                        operator = event.target.innerText;
-                    } else {
+                // if (operator === null) {
+                //     if (input != 0){
+                //         typeChange();
+                //         makeMemory();
+                //         operator = event.target.innerText;
+                //     } else {
    
-                    }
+                //     }
                 //if previous operator calculate and reassign operator
-                } else if (operator === '/') {
-                    typeChange();
-                    divide();
-                    console.log(memory);
-                    operator = event.target.innerText;
-                } else if (operator === 'x') {
-                    typeChange();
-                    multiply();
-                    console.log(memory);
-                    operator = event.target.innerText;
-                } else if (operator === '-') {
-                    typeChange();
-                    subtract();
-                    console.log(memory);
-                    operator = event.target.innerText;
-                } else if (operator === '+') {
-                    typeChange();
-                    add();
-                    operator = event.target.innerText;
-                    console.log(memory);
-                }
+                // } else if (operator === '/') {
+                //     typeChange();
+                //     divide();
+                //     operator - event.target.innerText;
+                // } else if (operator === 'x') {
+                //     typeChange();
+                //     multiply();
+                //     operator - event.target.innerText;
+                // } else if (operator === '-') {
+                //     typeChange();
+                //     subtract();
+                //     operator - event.target.innerText;
+                // } else if (operator === '+') {
+                //     typeChange();
+                //     add();
+                //     operator - event.target.innerText;
+                // }
                
              // check if button was a number
-             } else if (event.target.classList.contains('number')) {
+      //       } else
+             if (event.target.classList.contains('number')) {
                 if(input === 0){
                     input = event.target.innerText;
                     display.innerText = event.target.innerText;
@@ -69,23 +62,17 @@ document
              } else if (event.target.innerText === 'C') {
                  clear();
              //check if button was equals
-             } else if (event.target.innerText === '=') {
-                evaluate();
+    //         } else if (event.target.innerText === '=') {
              //check if button was backspace
-             } else if (event.target.innerText === '<-'){
+     //        } else if (event.target.innerText === '<-'){
              //length of input substring and delete last character
              } else {
                 console.log('problem');
-                alert(`You clicked on button ${event.target.innerText}`);
              }
-
+                
         
-         }   
-         else {
-            console.log('not a button');
          }
-        }
-    );     
+         );     
     
     function clear() {
         input = 0;
@@ -105,23 +92,7 @@ document
     }
 
     function evaluate() {
-        if (operator === '/') {
-            typeChange();
-            divide();
-            erase ();
-        } else if (operator === 'x') {
-            typeChange();
-            multiply();
-            erase ();
-        } else if (operator === '-') {
-            typeChange();
-            subtract();
-            erase ();
-        } else if (operator === '+') {
-            typeChange();
-            add();
-            erase ();
-        }
+        
     }
 
     function makeMemory() {
@@ -150,9 +121,4 @@ document
         memory = memory-input;
         input = 0;
         display.innerText = 0;
-    }
-    function erase() {
-        display.innerText = memory;
-        operator = null;
-        input = memory;
     }
