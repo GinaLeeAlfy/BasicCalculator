@@ -7,9 +7,6 @@ const display = document.querySelector(".display");
 document
     .querySelector(".button-container")
     .addEventListener("click", function(event) {
-        // if(button.tagname === 'BUTTON'){
-        // }
-        //check if click is button
        if (event.target.tagName === 'BUTTON') {
              //check if button was an operation
              if (event.target.classList.contains('operator')) {
@@ -21,14 +18,16 @@ document
                         input = 0;
                         operator = event.target.innerText;
                     } else {
-   
+                        console.log('problem')
                     }
                 //if previous operator calculate and reassign operator
                 } else if (operator === '/') {
-                    typeChange();
-                    divide();
-                    console.log(memory);
-                    operator = event.target.innerText;
+                    if (input != 0) {
+                        typeChange();
+                        divide();
+                        console.log(memory);
+                        operator = event.target.innerText;
+                    }
                 } else if (operator === 'x') {
                     typeChange();
                     multiply();
@@ -73,7 +72,7 @@ document
                 evaluate();
              //check if button was backspace
              } else if (event.target.innerText === '<-'){
-             //length of input substring and delete last character
+                backspace();
              } else {
                 console.log('problem');
                 alert(`You clicked on button ${event.target.innerText}`);
@@ -155,4 +154,15 @@ document
         display.innerText = memory;
         operator = null;
         input = memory;
+    }
+
+    function backspace() {
+        if (display.innerText.length > 1) {
+            display.innerText = display.innerText.slice(0, -1)
+            input = display.innerText;
+        } else {
+            display.innerText = 0;
+            input = 0;
+        }
+
     }
