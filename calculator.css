@@ -30,10 +30,6 @@ button:active {
     background-color:  rgb(167, 165, 165);
 }
 
-.number{
-
-}
-
 .clear{
     grid-area: clear;
 }
