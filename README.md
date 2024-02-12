@@ -1,4 +1,4 @@
-# Vanilla HTML Calculator
+# Vanilla Javascript Calculator
 This was a project from Front End Masters and was the second time I made a calculator.
 
 ![image](https://github.com/GinaLeeAlfy/BasicCalculator/assets/19276818/175d610a-5259-4ff6-8882-d6fbc387c757)
